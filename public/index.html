@@ -14,6 +14,9 @@
 </head>
 
 <body>
+
+    <!-- Login / Register -->
+
     <div class="container">
         <div class="row py-1">
             <div class="col-sm">
@@ -25,64 +28,76 @@
                 </button>
             </div>
         </div>
+
+        <!-- Header -->
+
         <div class="row py-5">
             <div class="col-11">
                 <h1>T O D O</h1>
             </div>
             <div class="col-1">
-                <i class="fa-regular fa-sun"></i>
+                <!-- <i class="fa-regular fa-sun"></i> -->
             </div>
         </div>
+
+        <!-- New task Container -->
+
         <div class="row my-5 addTaskContainer">
             <form action="" method="POST">
                 <div class="col my-1">
-                    <button type="button" class="btn btn-light me-5">+</button>
+                    <button type="button" class="btn btn-light mx-4">+</button>
                     <input class="addTaskInpt my-4 ms-4" type="text" placeholder="Create new task...">
                 </div>
             </form>
         </div>
+
+        <!-- Task List -->
+
         <div class="row mt-5 tasks">
-            <div class="col-1"><button type="button" class="btn btn-light my-3">✓</button></i></div>
+            <div class="col-1"><button type="button" class="btn btn-light my-3 mx-4">✓</button></i></div>
             <div class="col-11">
                 <p class="my-4">Complete Javascript</p>
             </div>
-            <hr class="hr">
+            <!-- <hr class="hr"> -->
             <div class="col-1">
-                <div class="col-1"><button type="button" class="btn btn-light my-3">✓</button></i></div></i>
+                <div class="col-1"><button type="button" class="btn btn-light my-3 mx-4">✓</button></i></div></i>
             </div>
             <div class="col-11">
                 <p class="my-4">Read for one hour</p>
             </div>
-            <hr class="hr">
+            <!-- <hr class="hr"> -->
             <div class="col-1">
-                <div class="col-1"><button type="button" class="btn btn-light my-3">✓</button></i></div></i>
+                <div class="col-1"><button type="button" class="btn btn-light my-3 mx-4">✓</button></i></div></i>
             </div>
             <div class="col-11">
                 <p class="my-4">Meditation</p>
             </div>
-            <hr class="hr">
+            <!-- <hr class="hr"> -->
             <div class="col-1">
-                <div class="col-1"><button type="button" class="btn btn-light my-3">✓</button></i></div></i>
+                <div class="col-1"><button type="button" class="btn btn-light my-3 mx-4">✓</button></i></div></i>
             </div>
             <div class="col-11">
                 <p class="my-4">Code</p>
             </div>
         </div>
+
+        <!-- Task info / Navbar -->
+
         <div class="row tasksInfo">
             <hr class="hr">
-            <div class="col-4 ms-5 pt-3">
+            <div class="col ms-5 pt-3">
                 <p>4 items left</p>
             </div>
-            <div class="col-1 pt-3">
+            <div class="col-2 pt-3">
                 <p>All</p>
             </div>
-            <div class="col-1 pt-3">
+            <div class="col-2 pt-3">
                 <p>Active</p>
             </div>
-            <div class="col-1 pt-3">
+            <div class="col-2 pt-3">
                 <p>Completed</p>
             </div>
-            <div class="col-4 me-5 pt-3 clear-completed">
+            <div class="col me-5 pt-3 clear-completed">
                 <p>Clear Completed</p>
             </div>
         </div>

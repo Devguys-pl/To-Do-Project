@@ -37,6 +37,11 @@ h1 {
     background-color: rgb(43, 39, 59);
     border-radius: 8px;
 }
+
+.addTaskContainer {
+    min-width: 364px;
+}
+
 .tasks {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -55,7 +60,7 @@ h1 {
 }
 
 .addTaskInpt {
-    width: 80%;
+    /* width: 300px; */
     background-color: transparent;
     border: none;
     outline: none;
@@ -69,10 +74,14 @@ h1 {
 }
 
 .clear-completed {
-    display: flex;
-    justify-content: flex-end;
+    text-align: end;
 }
 
 .tasksInfo p {
     color: rgb(105, 105, 105);
+    cursor: pointer;
+}
+
+.tasksInfo p:hover {
+    color: rgb(54, 134, 253);
 }
