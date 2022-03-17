@@ -1,3 +1,7 @@
+* {
+    color: rgb(230, 230, 230);
+}
+
 body {
     background-image: url("bg-image.png");
     background-repeat: no-repeat;
@@ -43,8 +47,15 @@ h1 {
     border-top-right-radius: 0;
 }
 
+.btn-light {
+    border-radius: 50%;
+    font-weight: 700;
+    color: rgb(230, 230, 230);
+    background-color: rgb(43, 39, 59);
+}
+
 .addTaskInpt {
-    width: 100%;
+    width: 80%;
     background-color: transparent;
     border: none;
     outline: none;
