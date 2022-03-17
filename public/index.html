@@ -1,27 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/custom.scss">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/custom.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/custom.scss" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/custom.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/61f78c01bf.js" crossorigin="anonymous"></script>
     <title>To Do Project</title>
 </head>
+
 <body>
-    
     <div class="container">
-        <div class="row">
-            <div class="col-sm-4">first col</div>
-            <div class="col-sm-4">second col</div>
-            <div class="col-sm-4">third col</div>
+        <div class="row py-1">
+            <div class="col-sm">
+                <button type="button" class="btn btn-outline-light btn-sm">
+                    Sign in
+                </button>
+                <button type="button" class="btn btn-outline-light btn-sm">
+                    Sign up
+                </button>
+            </div>
+        </div>
+        <div class="row py-5">
+            <div class="col-11">
+                <h1>T O D O</h1>
+            </div>
+            <div class="col-1">
+                <i class="fa-regular fa-sun"></i>
+            </div>
+        </div>
+        <div class="row my-5 addTaskContainer">
+            <div class="col-1 my-4">
+                <i class="fa-solid fa-circle-plus"></i>
+            </div>
+            <div class="col-11">
+                <input class="addTaskInpt my-4" type="text" placeholder="Create new task...">
+            </div>
+        </div>
+        <div class="row mt-5 tasks">
+            <div class="col-1"><i class="fa-regular fa-circle my-4"></i></div>
+            <div class="col-11">
+                <p class="my-4">Complete Javascript</p>
+            </div>
+            <hr class="hr">
+            <div class="col-1"><i class="fa-regular fa-circle my-4"></i></div>
+            <div class="col-11">
+                <p class="my-4">Read for one hour</p>
+            </div>
+            <hr class="hr">
+            <div class="col-1"><i class="fa-regular fa-circle my-4"></i></div>
+            <div class="col-11">
+                <p class="my-4">Meditation</p>
+            </div>
+            <hr class="hr">
+            <div class="col-1"><i class="fa-regular fa-circle my-4"></i></div>
+            <div class="col-11">
+                <p class="my-4">Code</p>
+            </div>
+        </div>
+        <div class="row tasksInfo">
+            <hr class="hr">
+            <div class="col-4 ms-5 pt-3">
+                <p>4 items left</p>
+            </div>
+            <div class="col-1 pt-3">
+                <p>All</p>
+            </div>
+            <div class="col-1 pt-3">
+                <p>Active</p>
+            </div>
+            <div class="col-1 pt-3">
+                <p>Completed</p>
+            </div>
+            <div class="col-4 me-5 pt-3 clear-completed">
+                <p>Clear Completed</p>
+            </div>
         </div>
     </div>
-    <button type="button" class="btn btn-primary">Primary</button>
 
     <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

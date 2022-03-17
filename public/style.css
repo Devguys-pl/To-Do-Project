@@ -2,4 +2,66 @@ body {
     background-image: url("bg-image.png");
     background-repeat: no-repeat;
     background-size: 100vw 45vh;
+    color: rgb(230, 230, 230);
+}
+
+.col-sm {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.col-sm > button {
+    margin-left: 8px;
+    border-bottom: 2px solid rgb(43, 39, 59);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 15%;
+}
+
+h1 {
+    color: rgb(230, 230, 230);
+}
+
+.fa-sun {
+    display: flex;
+    justify-content: flex-end;
+    color: #fff;
+}
+
+.addTaskContainer, .tasks, .tasksInfo{
+    background-color: rgb(43, 39, 59);
+    border-radius: 8px;
+}
+.tasks {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.tasksInfo {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.addTaskInpt {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.hr {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border: 0;
+    border-top: 3px solid rgb(102, 102, 102);
+}
+
+.clear-completed {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tasksInfo p {
+    color: rgb(105, 105, 105);
 }

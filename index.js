@@ -1,15 +1,25 @@
 require('dotenv').config();
 const express = require('express');
-const {urlencoded} = require("express");
+const {
+    urlencoded
+} = require("express");
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session')
-const {pool} = require('./utils/db');
+const {
+    pool
+} = require('./utils/db');
 // ******* UTILS *******
-const {handleError} = require("./utils/errors");
+const {
+    handleError
+} = require("./utils/errors");
 // ******* ROUTERS *******
-const {todoRouter} = require('./routers/todo');
-const {userRouter} = require('./routers/user');
+const {
+    todoRouter
+} = require('./routers/todo');
+const {
+    userRouter
+} = require('./routers/user');
 // ******* MIDDLEWARES *******
 // ******* EXPRESS CFG *******
 const app = express();
@@ -53,14 +63,18 @@ app.use(session({
 
 
 app.use('/todo', todoRouter);
-app.use('/user',userRouter);
+app.use('/user', userRouter);
 
 app.get('/', (req, res) => {
     const test = 1;
-    if (test === 1 ) {
-        res.sendFile('public/indedx.html' , { root : __dirname});
+    if (test === 1) {
+        res.sendFile('public/indedx.html', {
+            root: __dirname
+        });
     } else {
-        res.sendFile('public/test.html' , { root : __dirname});
+        res.sendFile('public/test.html', {
+            root: __dirname
+        });
     }
 
 });
