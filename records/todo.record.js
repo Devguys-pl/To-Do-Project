@@ -21,6 +21,11 @@ class TodoRecord {
         });
     }
 
+    static async listAll() {
+        const [results] = await pool.execute('SELECT * FROM `todos`');
+        return results
+    }
+
 }
 
 module.exports = {

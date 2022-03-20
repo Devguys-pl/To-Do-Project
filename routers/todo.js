@@ -10,6 +10,11 @@ todoRouter.get('/', (req, res, next) => {
     res.send('Test, router /todo')
 })
 
+todoRouter.get('/list', async (req, res) => {
+    const todosList = await TodoRecord.listAll();
+    res.json({data: todosList});
+})
+
 
 
 
