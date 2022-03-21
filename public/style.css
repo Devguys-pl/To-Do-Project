@@ -9,14 +9,24 @@ body {
     color: rgb(230, 230, 230);
 }
 
+.modal-content {
+    background-color: rgb(43, 39, 59);
+}
+
+.form-control:focus, .form-control {
+    color: rgb(230, 230, 230);
+}
+
+
+
 .col-sm {
     display: flex;
     justify-content: flex-end;
 }
 
-.col-sm > button {
+.btn-outline-light {
     margin-left: 8px;
-    border-bottom: 2px solid rgb(43, 39, 59);
+    border-bottom: 2px solid #13111f;
     border-top: none;
     border-left: none;
     border-right: none;
