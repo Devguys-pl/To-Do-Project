@@ -57,6 +57,17 @@ h1 {
     border-bottom-right-radius: 0;
 }
 
+.dots-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.fa-ellipsis:hover {
+    color: rgb(54, 134, 253);
+    cursor: pointer;
+}
+
 .tasksInfo {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
