@@ -6,18 +6,21 @@ class TodoRecord {
         this.id = obj.id;
         this.createdAt = obj.createdAt;
         this.userId = obj.userId;
-        this.task = obj.task;
+        this.taskTitle = obj.taskTitle;
+        this.status = obj.status;
     }
 
     async create(){
         if (typeof this.id === "undefined") {
             this.id = uuid();
+            this.status = 'Active'
         }
-        await pool.execute('INSERT INTO `todos` VALUES(:id, :createdAt,:userId, :task)', {
+        await pool.execute('INSERT INTO `todos` VALUES(:id, :createdAt,:userId, :taskTitle, :status)', {
             id: this.id,
-            createdAt: this.createdAt,
-            userId: this.userId,
-            task: this.task
+            createdAt: 'this.createdAt',
+            userId: 'this.userId',
+            taskTitle: this.taskTitle,
+            status: this.status
         });
     }
 

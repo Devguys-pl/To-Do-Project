@@ -15,6 +15,10 @@ todoRouter.get('/list', async (req, res) => {
     res.json({todosList: todosList});
 })
 
+todoRouter.post('/create', async (req, res) => {
+    const newTask = new TodoRecord(req.body)
+    await newTask.create()
+})
 
 
 
