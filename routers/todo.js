@@ -12,7 +12,7 @@ todoRouter.get('/', (req, res, next) => {
 
 todoRouter.get('/list', async (req, res) => {
     const todosList = await TodoRecord.listAll();
-    res.json({data: todosList});
+    res.json({todosList: todosList});
 })
 
 
