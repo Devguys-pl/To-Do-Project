@@ -1,8 +1,16 @@
 require('dotenv').config();
-const {Router} = require('express');
-const {UserRecord} = require("../records/user.record");
-const {TodoRecord} = require("../records/todo.record");
-const {URLSearchParams} = require('url');
+const {
+    Router
+} = require('express');
+const {
+    UserRecord
+} = require("../records/user.record");
+const {
+    TodoRecord
+} = require("../records/todo.record");
+const {
+    URLSearchParams
+} = require('url');
 const todoRouter = Router();
 
 
@@ -12,12 +20,16 @@ todoRouter.get('/', (req, res, next) => {
 
 todoRouter.get('/list', async (req, res) => {
     const todosList = await TodoRecord.listAll();
-    res.json({todosList: todosList});
+    res.json({
+        todosList: todosList
+    });
 })
 
 todoRouter.post('/create', async (req, res) => {
     const newTask = new TodoRecord(req.body)
     await newTask.create()
+    res.end
+    res.redirect('http://localhost:3000/')
 })
 
 

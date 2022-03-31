@@ -37,11 +37,11 @@ h1 {
     color: rgb(230, 230, 230);
 }
 
-.fa-sun {
+/* .fa-sun {
     display: flex;
     justify-content: flex-end;
     color: #fff;
-}
+} */
 
 .addTaskContainer, .tasks, .tasksInfo{
     background-color: rgb(43, 39, 59);
@@ -98,11 +98,23 @@ h1 {
     text-align: end;
 }
 
-.tasksInfo p {
+.navbarP {
     color: rgb(105, 105, 105);
     cursor: pointer;
 }
 
-.tasksInfo p:hover {
+.itemsLeft {
+    color: rgb(105, 105, 105);
+}
+
+.navbarP:hover {
     color: rgb(54, 134, 253);
+}
+
+.checkedCompleteBtn {
+    color: #000;
+    background-color: #f9fafb;
+    border-color: #f9fafb;
+    box-shadow: 0 0 0 0.25rem rgb(211 212 213 / 50%);
+    cursor: pointer;
 }

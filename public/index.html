@@ -10,7 +10,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/custom.min.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/61f78c01bf.js" crossorigin="anonymous"></script>
     <title>To Do Project</title>
 </head>
@@ -115,10 +115,10 @@
         <!-- New task Container -->
 
         <div class="row my-5 addTaskContainer">
-            <form action="" method="POST">
+            <form action="http://localhost:3000/todo/create" method="POST">
                 <div class="col my-1">
-                    <button type="button" class="addTaskBtn btn btn-light mx-4">+</button>
-                    <input class="addTaskInpt my-4 ms-4" type="text" placeholder="Create new task...">
+                    <button type="submit" class="addTaskBtn btn btn-light mx-4">+</button>
+                    <input name="taskTitle" class="addTaskInpt my-4 ms-4" type="text" placeholder="Create new task...">
                 </div>
             </form>
         </div>
@@ -127,7 +127,7 @@
 
         <div class="taskList row mt-5 tasks">
             <div class="col-2">
-                <button type="button" class="btn btn-light my-3 mx-4">✓</button></i>
+                <button type="button" class="btn btn-light my-3 mx-4 completeBtn">✓</button></i>
             </div>
             <div class="col-8">
                 <p class="my-4">Complete Javascript</p>
@@ -137,7 +137,7 @@
             </div>
             <!-- <hr class="hr"> -->
             <div class="col-2">
-                <button type="button" class="btn btn-light my-3 mx-4">✓</button></i></i>
+                <button type="button" class="btn btn-light my-3 mx-4 completeBtn">✓</button></i></i>
             </div>
             <div class="col-8">
                 <p class="my-4">Read for one hour</p>
@@ -147,7 +147,7 @@
             </div>
             <!-- <hr class="hr"> -->
             <div class="col-2">
-                <button type="button" class="btn btn-light my-3 mx-4">✓</button></i></i>
+                <button type="button" class="btn btn-light my-3 mx-4 completeBtn">✓</button></i></i>
             </div>
             <div class="col-8">
                 <p class="my-4">Meditation</p>
@@ -157,7 +157,7 @@
             </div>
             <!-- <hr class="hr"> -->
             <div class="col-2">
-                <button type="button" class="btn btn-light my-3 mx-4">✓</button></i></i>
+                <button type="button" class="btn btn-light my-3 mx-4 completeBtn">✓</button></i></i>
             </div>
             <div class="col-8">
                 <p class="my-4">Code</p>
@@ -172,19 +172,19 @@
         <div class="row tasksInfo">
             <hr class="hr">
             <div class="col ms-5 pt-3">
-                <p>4 items left</p>
+                <p class="itemsLeft">4 items left</p>
             </div>
             <div class="col-2 pt-3">
-                <p>All</p>
+                <p class="navbarP">All</p>
             </div>
             <div class="col-2 pt-3">
-                <p>Active</p>
+                <p class="navbarP">Active</p>
             </div>
             <div class="col-2 pt-3">
-                <p>Completed</p>
+                <p class="navbarP">Completed</p>
             </div>
             <div class="col me-5 pt-3 clear-completed">
-                <p>Clear Completed</p>
+                <p class="navbarP">Clear Completed</p>
             </div>
         </div>
     </div>
