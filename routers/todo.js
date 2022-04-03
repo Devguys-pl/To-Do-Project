@@ -28,7 +28,6 @@ todoRouter.get('/list', async (req, res) => {
 todoRouter.post('/create', async (req, res) => {
     const newTask = new TodoRecord(req.body)
     await newTask.create()
-    res.end
     res.redirect('http://localhost:3000/')
 })
 

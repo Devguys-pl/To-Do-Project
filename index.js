@@ -65,19 +65,19 @@ app.use(session({
 app.use('/todo', todoRouter);
 app.use('/user', userRouter);
 
-app.get('/', (req, res) => {
-    const test = 1;
-    if (test === 1) {
-        res.sendFile('public/indedx.html', {
-            root: __dirname
-        });
-    } else {
-        res.sendFile('public/test.html', {
-            root: __dirname
-        });
-    }
-
-});
+// app.get('/', (req, res) => {
+//     const test = 1;
+//     if (test === 1) {
+//         res.sendFile('public/indedx.html', {
+//             root: __dirname
+//         });
+//     } else {
+//         res.sendFile('public/test.html', {
+//             root: __dirname
+//         });
+//     }
+//
+// });
 
 app.listen(3000, 'localhost', () => {
     console.log('App started http://localhost:3000')
