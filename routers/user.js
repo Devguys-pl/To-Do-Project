@@ -7,6 +7,10 @@ const bcrypt = require("bcrypt");
 const crypto = require('crypto');
 const userRouter = Router();
 
+userRouter.get('/session', async (req, res) => {
+    console.log(req.session.user)
+});
+
 
 
 userRouter.post('/create', async (req, res) => {
@@ -47,6 +51,9 @@ userRouter.post('/login', async (req, res) => {
                 id: user.id
             }
             return res.status(400).send(`Success Login, welcome!:  ${user.email}`)
+            console.log(req.session)
+            console.log(req.session.user)
+
         } else {
             return res.status(400).send('Wrong password or e-mail.')
         }

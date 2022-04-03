@@ -12,12 +12,15 @@ class TodoRecord {
 
     async create(){
         if (typeof this.id === "undefined") {
+            const date = new Date();
+            let myDate = (date.getUTCFullYear()) + "/" + (date.getMonth() + 1)+ "/" + (date.getUTCDate());
             this.id = uuid();
             this.status = 'Active'
+            this.createdAt = myDate;
         }
         await pool.execute('INSERT INTO `todos` VALUES(:id, :createdAt,:userId, :taskTitle, :status)', {
             id: this.id,
-            createdAt: 'this.createdAt',
+            createdAt: this.createdAt,
             userId: 'this.userId',
             taskTitle: this.taskTitle,
             status: this.status
