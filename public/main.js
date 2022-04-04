@@ -24,7 +24,7 @@ const showTask = (tasks) => {
         const singleTask = document.createElement('div');
         singleTask.classList.add('row');
         singleTask.innerHTML = `<div class="col-2">
-        <button type="button" class="btn btn-light my-3 mx-4 completeBtn">✓</button></i>
+        <button type="button" id="${task.id}" class="btn btn-light my-3 mx-4 completeBtn">✓</button></i>
     </div>
     <div class="col-8">
         <p class="my-4">${task.taskTitle}</p>
@@ -35,7 +35,17 @@ const showTask = (tasks) => {
         taskList.appendChild(singleTask);
 
 
-        //tutaj kod od navbaru
+        const completeBtn = document.getElementById(task.id);
+
+        let markTaskAsComplete = () => {
+            // isComplete = !isComplete;
+            completeBtn.classList.toggle('checkedCompleteBtn');
+        }
+
+        completeBtn.addEventListener('click', markTaskAsComplete);
+
+
+
     })
 }
 
@@ -43,12 +53,5 @@ const showTask = (tasks) => {
 getTasksList()
 
 
-const completeBtn = document.querySelector('.completeBtn');
-let isComplete = false;
-
-let markTaskAsComplete = () => {
-    isComplete = !isComplete;
-    completeBtn.classList.toggle('checkedCompleteBtn');
-}
-
-completeBtn.addEventListener('click', markTaskAsComplete);
+// const completeBtn = document.querySelector('.completeBtn');
+// let isComplete = false;
