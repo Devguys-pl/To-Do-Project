@@ -7,8 +7,17 @@ const bcrypt = require("bcrypt");
 const crypto = require('crypto');
 const userRouter = Router();
 
-userRouter.get('/session', async (req, res) => {
-    console.log(req.session.user)
+userRouter.get('/check-session', async (req, res) => {
+    if (typeof req.session.user === "undefined") {
+        return res.status(400).json({
+            isLogged: false
+        })
+    } else {
+        return res.status(200).json({
+            isLogged: true,
+            userId: req.session.user.id
+        })
+    }
 });
 
 
@@ -49,9 +58,8 @@ userRouter.post('/login', async (req, res) => {
             req.session.user = {
                 id: user.id
             }
+            console.log(req.session.user);
             return res.status(400).send(`Success Login, welcome!:  ${user.email}`)
-            console.log(req.session)
-            console.log(req.session.user)
 
         } else {
             return res.status(400).send('Wrong password or e-mail.')
