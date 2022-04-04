@@ -31,6 +31,26 @@ todoRouter.post('/create', async (req, res) => {
     res.redirect('http://localhost:3000/')
 })
 
+todoRouter.get('/:id/activation', async (req, res) => {
+    if (typeof req.url.split('/')[1] === "string") {
+        try {
+            const results = await TodoRecord.getOneById(req.url.split('/')[1]);
+            const todo = results[0];
+            if (todo.id === req.url.split('/')[1]) {
+                await TodoRecord.getOneByIdAndChangeStatus(todo.id)
+                return res.status(200).json({
+                    Status: todo.status,
+                    Id: todo.id,
+                })
+            } else {
+                return res.status(400).send('Something wrong')
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+})
+
 
 
 module.exports = {

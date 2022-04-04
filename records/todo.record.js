@@ -32,6 +32,25 @@ class TodoRecord {
         return results
     }
 
+    static async getOneById(id) {
+        const [results] = await pool.execute('SELECT * FROM `todos`  WHERE `id` = :id', {
+            id,
+        });
+        return results
+    };
+
+    static async getOneByIdAndChangeStatus(id) {
+        if (this.status === 'Active') {
+            this.status = 'Completed'
+        } else {
+            this.status = 'Active'
+        }
+        await pool.execute('UPDATE `todos` SET `status` = :status WHERE `id` = :id', {
+            id: id,
+            status: this.status,
+        });
+    };
+
 }
 
 module.exports = {
