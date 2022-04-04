@@ -31,9 +31,8 @@ userRouter.post('/create', async (req, res) => {
 
     } catch (e){
         return res.status(400).send(`
-         Something wrong, please try again
+         Something wrong, please try again 
         `)
-        console.log(e);
     }
 
 })

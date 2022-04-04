@@ -30,7 +30,7 @@ class UserRecord {
             this.id = uuid();
             this.registered = myDate;
         }
-        await pool.execute('INSERT INTO `users` VALUES(:id, :email, :password)', {
+        await pool.execute('INSERT INTO `users` VALUES(:id, :email, :password, :registered, :last_login)', {
             id: this.id,
             email: this.email,
             password: hash,
