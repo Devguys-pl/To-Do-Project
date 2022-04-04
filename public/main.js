@@ -23,10 +23,9 @@ const showTask = (tasks) => {
         // console.log(task);
         const singleTask = document.createElement('div');
         singleTask.classList.add('row');
-        singleTask.innerHTML = `
-        <div class="col-2">
-            <button type="button" id="${task.id}" class="btn btn-light my-3 mx-4 completeBtn">✓</button></i>
-         </div>
+        singleTask.innerHTML = `<div class="col-2">
+        <button type="button" id="${task.id}" class="btn btn-light my-3 mx-4 completeBtn">✓</button></i>
+    </div>
     <div class="col-8">
         <p class="my-4">${task.taskTitle}</p>
     </div>
@@ -40,9 +39,6 @@ const showTask = (tasks) => {
 
         let markTaskAsComplete = () => {
             // isComplete = !isComplete;
-            window.setTimeout(() => {
-                window.location.reload(true);
-            }, 10);
             completeBtn.classList.toggle('checkedCompleteBtn');
         }
 
