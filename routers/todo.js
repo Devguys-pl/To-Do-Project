@@ -19,7 +19,7 @@ todoRouter.get('/', (req, res, next) => {
 })
 
 todoRouter.get('/list', async (req, res) => {
-    const todosList = await TodoRecord.listAll();
+    const todosList = await TodoRecord.listAll(req.session.user.id);
     res.json({
         todosList: todosList
     });
@@ -27,7 +27,7 @@ todoRouter.get('/list', async (req, res) => {
 
 todoRouter.post('/create', async (req, res) => {
     const newTask = new TodoRecord(req.body)
-    await newTask.create()
+    await newTask.create(req.session.user.id)
     res.redirect('http://localhost:3000/')
 })
 
