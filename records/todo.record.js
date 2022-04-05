@@ -39,15 +39,10 @@ class TodoRecord {
         return results
     };
 
-    static async getOneByIdAndChangeStatus(id) {
-        if (this.status === 'Active') {
-            this.status = 'Completed'
-        } else {
-            this.status = 'Active'
-        }
+    static async getOneByIdAndChangeStatus(id, status) {
         await pool.execute('UPDATE `todos` SET `status` = :status WHERE `id` = :id', {
-            id: id,
-            status: this.status,
+            id,
+            status,
         });
     };
 

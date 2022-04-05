@@ -37,7 +37,13 @@ todoRouter.get('/:id/activation', async (req, res) => {
             const results = await TodoRecord.getOneById(req.url.split('/')[1]);
             const todo = results[0];
             if (todo.id === req.url.split('/')[1]) {
-                await TodoRecord.getOneByIdAndChangeStatus(todo.id)
+              if (todo.status !== "Active") {
+                const status = "Active"
+                await TodoRecord.getOneByIdAndChangeStatus(todo.id, status)
+              } else if(todo.status !== "Completed") {
+                const status = 'Completed';
+                await TodoRecord.getOneByIdAndChangeStatus(todo.id, status)
+              }
                 return res.status(200).json({
                     Status: todo.status,
                     Id: todo.id,
