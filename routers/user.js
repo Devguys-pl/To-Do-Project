@@ -71,6 +71,16 @@ userRouter.post('/login', async (req, res) => {
     }
 })
 
+userRouter.get('/user/logout', async(req, res) => {
+    req.session.destroy(function(err){
+        if(err){
+            console.log('Something wrong')
+        } else {
+            console.log('Succes LOGOUT');
+           return res.redirect('/')
+        }
+    })
+})
 
 
 
