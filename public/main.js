@@ -46,13 +46,39 @@ const showTask = (tasks) => {
             }
 
         }
-
         completeBtn.addEventListener('click', markTaskAsComplete);
-
-
-
     })
 }
-
-
 getTasksList()
+
+
+const getLoginInfo = () => {
+    fetch('http://localhost:3000/user/check-session')
+        .then(res => {
+            if (res.status !== 200) {
+                throw Error('status isn`t 200')
+            } else {
+                return res.json()
+            }
+        })
+        .then(json => isUserLogged(json))
+}
+
+const loginRegisterDiv = document.querySelector('.loginRegisterDiv');
+const loginRegisterCol = document.querySelector('.loginRegisterCol');
+
+const isUserLogged = (user) => {
+    console.log(user.isLogged);
+    if (user.isLogged == true) {
+
+        loginRegisterCol.remove();
+        let logoutDiv = document.createElement('div');
+        logoutDiv.classList.add('col-sm');
+        loginRegisterDiv.appendChild(logoutDiv);
+        logoutDiv.innerHTML = `<h5>Welcome</h5> <button type="button" class="btn btn-outline-light btn-sm">
+        Log Out
+    </button> `;
+    }
+}
+
+getLoginInfo()
