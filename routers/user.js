@@ -15,7 +15,8 @@ userRouter.get('/check-session', async (req, res) => {
     } else {
         return res.status(200).json({
             isLogged: true,
-            userId: req.session.user.id
+            userId: req.session.user.id,
+            email: req.session.user.email,
         })
     }
 });
@@ -56,7 +57,8 @@ userRouter.post('/login', async (req, res) => {
         const check = await bcrypt.compare(req.body.password, results[0].password);
         if (check) {
             req.session.user = {
-                id: user.id
+                id: user.id,
+                email: user.email,
             }
             console.log(req.session.user);
             return res.status(400).send(`Success Login, welcome!:  ${user.email}`)
@@ -71,6 +73,16 @@ userRouter.post('/login', async (req, res) => {
     }
 })
 
+userRouter.get('/user/logout', async(req, res) => {
+    req.session.destroy(function(err){
+        if(err){
+            console.log('Something wrong')
+        } else {
+            console.log('Succes LOGOUT');
+           return res.redirect('/')
+        }
+    })
+})
 
 
 
